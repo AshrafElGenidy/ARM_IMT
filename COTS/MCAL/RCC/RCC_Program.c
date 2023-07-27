@@ -10,9 +10,12 @@
 
 void RCC_voidInitSysClk(void)
 {
+    /*Setting Prescalars for the busses*/
+    RCC_CFGR = RCC_CFGR_EMPTY | (RCC_AHB_PRESCALAR << RCC_CFGR_HPRE) | (RCC_APB1_PRESCALAR << RCC_CFGR_PPRE1) || (RCC_APB2_PRESCALAR << RCC_CFGR_PPRE2);
+
     #if RCC_SYSCLK_SRC == RCC_HSI
-        /*Turn on HSI*/
-        SET_BIT(RCC_CR, RCC_CR_HSION);
+        SET_BIT(RCC_CR, RCC_CR_HSION);      /*Turn on HSI*/
+        MAKE_BIT(RCC_CR, RCC_CR_HSEBYP, RCC_HSE_BYPASSED);  /*Determine whether the HSE oscillator bypassed with an external clock*/
         while (!GET_BIT(RCC_CR, RCC_CR_HSIRDY))
         {
             /*Wait for HSI to turn on*/
@@ -22,8 +25,7 @@ void RCC_voidInitSysClk(void)
         CLR_BIT(RCC_CFGR, RCC_CFGR_SW1);
 
     #elif RCC_SYSCLK_SRC == RCC_HSE
-        /*Turn on HSE*/
-        SET_BIT(RCC_CR, RCC_CR_HSEON);
+        SET_BIT(RCC_CR, RCC_CR_HSEON);      /*Turn on HSE*/
         while (!GET_BIT(RCC_CR, RCC_CR_HSERDY))
         {
             /*Wait for HSE to turn on*/
@@ -33,13 +35,11 @@ void RCC_voidInitSysClk(void)
         CLR_BIT(RCC_CFGR, RCC_CFGR_SW1);
 
     #elif RCC_SYSCLK_SRC == RCC_PLL
-        /*Turn off PLL before configuring*/
-        CLR_BIT(RCC_CR,RCC_CR_PLLON);
+        CLR_BIT(RCC_CR,RCC_CR_PLLON);   /*Turn off PLL before configuring*/
         /*Configure PLL variables*/
         RCC_PLLCFGR = RCC_PLLCFGR_EMPTY | (RCC_PLL_M << RCC_PLLCFGR_PLLM0) | (RCC_PLL_N << RCC_PLLCFGR_PLLN0) | (RCC_PLL_P_REG_VAL << RCC_PLLCFGR_PLLP0) | (RCC_PLL_Q << RCC_PLLCFGR_PLLQ0);
         #if RCC_PLL_SRC == RCC_HSI
-            /*Turn on HSI*/
-            SET_BIT(RCC_CR, RCC_CR_HSION);
+            SET_BIT(RCC_CR, RCC_CR_HSION);      /*Turn on HSI*/
             while (!GET_BIT(RCC_CR, RCC_CR_HSIRDY))
             {
                 /*Wait for HSI to turn on*/
@@ -48,8 +48,7 @@ void RCC_voidInitSysClk(void)
             CLR_BIT(RCC_PLLCFGR, RCC_PLLCFGR_PLLSRC);
 
         #elif RCC_PLL_SRC == RCC_HSE
-            /*Turn on HSE*/
-            SET_BIT(RCC_CR, RCC_CR_HSEON);
+            SET_BIT(RCC_CR, RCC_CR_HSEON);      /*Turn on HSE*/
             while (!GET_BIT(RCC_CR, RCC_CR_HSERDY))
             {
                 /*Wait for HSE to turn on*/
@@ -60,8 +59,7 @@ void RCC_voidInitSysClk(void)
         #else
             #error 'RCC_PLL_SRC' can only be 'RCC_HSI' or 'RCC_HSE'
         #endif
-        /*Turn on PLL*/
-        SET_BIT(RCC_CR,RCC_CR_PLLON);
+        SET_BIT(RCC_CR,RCC_CR_PLLON);       /*Turn on PLL*/
         while (!GET_BIT(RCC_CR, RCC_CR_PLLRDY))
         {
             /*Wait for PLL to turn on*/

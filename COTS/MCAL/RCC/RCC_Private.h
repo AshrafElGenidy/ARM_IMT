@@ -8,8 +8,8 @@
 #ifndef RCC_PRIVATE_H_
 #define RCC_PRIVATE_H_
 
-#include "RCC_Interface.h"
 #include "RCC_Config.h"
+#include "RCC_Interface.h"
 
 /*Clocks in RCC*/
 #define RCC_HSI         (1u)
@@ -40,12 +40,13 @@
 #define RCC_PLLI2SCFGR          (*((volatile u32*)0x40023884))
 #define RCC_DCKCFGR             (*((volatile u32*)0x4002388C))
 
-/*Bits*/
+/*Bits in Registers*/
 /*RCC_CR*/
 #define RCC_CR_HSION                (0u)
 #define RCC_CR_HSIRDY               (1u)
 #define RCC_CR_HSEON                (16u)
 #define RCC_CR_HSERDY               (17u)
+#define RCC_CR_HSEBYP               (18u)
 #define RCC_CR_PLLON                (24u)
 #define RCC_CR_PLLRDY               (25u)
 /*RCC_PLLCFGR*/     
@@ -57,6 +58,9 @@
 /*RCC_CFGR*/        
 #define RCC_CFGR_SW0                (0u)
 #define RCC_CFGR_SW1                (1u)
+#define RCC_CFGR_HPRE               (4u)
+#define RCC_CFGR_PPRE1              (10u)
+#define RCC_CFGR_PPRE2              (13u)
 /*RCC_AHB1ENR*/
 #define RCC_AHB1ENR_GPIOAEN         (0u)
 #define RCC_AHB1ENR_GPIOBEN         (1u)
@@ -95,7 +99,26 @@
 
 /*Useful Macros*/
 #define RCC_PLLCFGR_EMPTY   (0x20000000)
+#define RCC_CFGR_EMPTY      (0x00000000)
 #define RCC_PLL_P_REG_VAL   ((RCC_PLL_P -2) >> 1)
+
+/*Prescalar options*/
+/*AHB*/
+#define PRE_SYSCLK_1        (7u)
+#define PRE_SYSCLK_2        (8u)
+#define PRE_SYSCLK_4        (9u)
+#define PRE_SYSCLK_8        (10u)
+#define PRE_SYSCLK_16       (11u)
+#define PRE_SYSCLK_64       (12u)
+#define PRE_SYSCLK_128      (13u)
+#define PRE_SYSCLK_256      (14u)
+#define PRE_SYSCLK_512      (15u)
+/*APB*/
+#define PRE_AHB_1           (3u)
+#define PRE_AHB_2           (4u)
+#define PRE_AHB_4           (5u)
+#define PRE_AHB_8           (6u)
+#define PRE_AHB_16          (7u)
 
 
 /*Checking on PLL configuration values*/
@@ -113,6 +136,22 @@
 
 #if (RCC_PLL_P != 2) && (RCC_PLL_P != 4) && (RCC_PLL_P != 6) && (RCC_PLL_P != 8)
     #error 'RCC_PLL_P' can only be 2, 4, 6 or 8
+#endif
+
+#if (RCC_HSE_BYPASSED != TRUE) && (RCC_HSE_BYPASSED != FALSE)
+    #error 'RCC_HSE_BYPASSED' can only be 'TRUE' or 'FALSE'
+#endif
+
+#if RCC_AHB_PRESCALAR < PRE_SYSCLK_1 || RCC_AHB_PRESCALAR > PRE_SYSCLK_512
+    #error 'RCC_AHB_PRESCALAR' must in the range 'PRE_SYSCLK_1' ≤ 'RCC_AHB_PRESCALAR' ≤ 'PRE_SYSCLK_512'
+#endif
+
+#if RCC_APB1_PRESCALAR < PRE_AHB_1 || RCC_APB1_PRESCALAR > PRE_AHB_16
+    #error 'RCC_APB1_PRESCALAR' must in the range 'PRE_AHB_1' ≤ 'RCC_APB1_PRESCALAR' ≤ 'PRE_AHB_16'
+#endif
+
+#if RCC_APB2_PRESCALAR < PRE_AHB_1 || RCC_APB2_PRESCALAR > PRE_AHB_16
+    #error 'RCC_APB2_PRESCALAR' must in the range 'PRE_AHB_1' ≤ 'RCC_APB2_PRESCALAR' ≤ 'PRE_AHB_16'
 #endif
 
 #endif /*RCC_PRIVATE_H_*/

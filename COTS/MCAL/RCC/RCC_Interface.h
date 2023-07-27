@@ -10,6 +10,7 @@
 
 #include "../../Lib/STD_TYPES.h"
 #include "../../Lib/BIT_MATH.h"
+#include "../../Lib/MACROS.h"
 
 /*Peripheral IDs*/
 #define PREI_USBFS          (0u)
