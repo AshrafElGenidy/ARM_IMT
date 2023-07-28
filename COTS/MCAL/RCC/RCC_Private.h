@@ -8,16 +8,13 @@
 #ifndef RCC_PRIVATE_H_
 #define RCC_PRIVATE_H_
 
+/************************************************************************/
 #include "RCC_Config.h"
 #include "RCC_Interface.h"
+/************************************************************************/
 
-/*Clocks in RCC*/
-#define RCC_HSI         (1u)
-#define RCC_HSE         (2u)
-#define RCC_PLL         (3u)
-
-/*Registers in RCC*/
-/*Address of RCC is 0x4002-3800*/
+/*Registers and Bits*/
+#define RCC_SEGMENT             (*((volatile u32*)0x40023800))
 #define RCC_CR                  (*((volatile u32*)0x40023800))
 #define RCC_PLLCFGR             (*((volatile u32*)0x40023804))
 #define RCC_CFGR                (*((volatile u32*)0x40023808))
@@ -40,7 +37,6 @@
 #define RCC_PLLI2SCFGR          (*((volatile u32*)0x40023884))
 #define RCC_DCKCFGR             (*((volatile u32*)0x4002388C))
 
-/*Bits in Registers*/
 /*RCC_CR*/
 #define RCC_CR_HSION                (0u)
 #define RCC_CR_HSIRDY               (1u)
@@ -95,12 +91,13 @@
 #define RCC_APB2ENR_TIM9EN          (16u)
 #define RCC_APB2ENR_TIM10EN         (17u)
 #define RCC_APB2ENR_TIM11EN         (18u)
+/************************************************************************/
 
-
-/*Useful Macros*/
-#define RCC_PLLCFGR_EMPTY   (0x20000000)
-#define RCC_CFGR_EMPTY      (0x00000000)
-#define RCC_PLL_P_REG_VAL   ((RCC_PLL_P -2) >> 1)
+/*Configuration options*/
+/*Clocks in RCC*/
+#define RCC_HSI         (1u)
+#define RCC_HSE         (2u)
+#define RCC_PLL         (3u)
 
 /*Prescalar options*/
 /*AHB*/
@@ -119,9 +116,15 @@
 #define PRE_AHB_4           (5u)
 #define PRE_AHB_8           (6u)
 #define PRE_AHB_16          (7u)
+/************************************************************************/
 
+/*Useful Macros*/
+#define RCC_PLLCFGR_EMPTY   (0x20000000)
+#define RCC_CFGR_EMPTY      (0x00000000)
+#define RCC_PLL_P_REG_VAL   ((RCC_PLL_P -2) >> 1)
+/************************************************************************/
 
-/*Checking on PLL configuration values*/
+/*Checking if configuration options are done correctly*/
 #if RCC_PLL_M < 2 || RCC_PLL_M > 63
     #error 'RCC_PLL_M' must in the range 2 ≤ M ≤ 63
 #endif
@@ -153,5 +156,6 @@
 #if RCC_APB2_PRESCALAR < PRE_AHB_1 || RCC_APB2_PRESCALAR > PRE_AHB_16
     #error 'RCC_APB2_PRESCALAR' must in the range 'PRE_AHB_1' ≤ 'RCC_APB2_PRESCALAR' ≤ 'PRE_AHB_16'
 #endif
+/************************************************************************/
 
 #endif /*RCC_PRIVATE_H_*/

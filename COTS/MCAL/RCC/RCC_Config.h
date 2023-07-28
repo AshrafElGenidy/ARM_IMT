@@ -29,8 +29,8 @@
 /***********************************************************************************************************************************/
 
 /*Prescalar configurations*/
-#define RCC_AHB_PRESCALAR       PRE_SYSCLK_1
-#define RCC_APB1_PRESCALAR      PRE_AHB_1
-#define RCC_APB2_PRESCALAR      PRE_AHB_1
+#define RCC_AHB_PRESCALAR       PRE_SYSCLK_1    /*AHB prescalar from system CLK -- options: PRE_SYSCLK_(1,2,4,8,16,64,128,256,512)*/
+#define RCC_APB1_PRESCALAR      PRE_AHB_1       /*APB1 prescalar from AHB CLK -- options: PRE_AHB_(1,2,4,8,16) -- APB1 CLK must not exceed 42MHz*/
+#define RCC_APB2_PRESCALAR      PRE_AHB_1       /*APB2 prescalar from AHB CLK -- options: PRE_AHB_(1,2,4,8,16) -- APB2 CLK must not exceed 42MHz*/
 
 #endif /*RCC_CONFIG_H_*/
