@@ -8,7 +8,6 @@
 #ifndef RCC_CONFIG_H_
 #define RCC_CONFIG_H_
 
-
 #define RCC_SYSCLK_SRC     RCC_HSI              /*System CLK Source --- options: RCC_HSI, RCC_HSE, RCC_PLL*/
 
 /*HSE Configurations*/
@@ -22,9 +21,9 @@
  * PLL output frequency = VCO frequency / PLLP              (ensure that PLL output clock frequency does not exceed 84 MHz)
  * USB OTG FS clock frequency = VCO frequency / PLLQ        (ensure that USB OTG FS clock frequency does not exceed 48 MHz) */
     #define RCC_PLL_SRC         RCC_HSI             /*PLL input source --- options: RCC_HSI, RCC_HSE*/
-    #define RCC_PLL_M           50                  /*PLL M value --- options:   2 ≤ M ≤ 63  */
-    #define RCC_PLL_N           200                 /*PLL N Value --- options: 192 ≤ N ≤ 432 */
-    #define RCC_PLL_Q           2                   /*PLL Q Value --- options:   2 ≤ Q ≤ 15 */
+    #define RCC_PLL_M           50                  /*PLL M value --- options:   2 <= M <= 63  */
+    #define RCC_PLL_N           200                 /*PLL N Value --- options: 192 <= N <= 432 */
+    #define RCC_PLL_Q           2                   /*PLL Q Value --- options:   2 <= Q <= 15 */
     #define RCC_PLL_P           2                   /*PLL P Value --- options:   2,4,6,8 */
 /***********************************************************************************************************************************/
 

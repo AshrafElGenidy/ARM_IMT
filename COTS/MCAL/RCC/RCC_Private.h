@@ -9,12 +9,13 @@
 #define RCC_PRIVATE_H_
 
 /************************************************************************/
-#include "RCC_Config.h"
 #include "RCC_Interface.h"
+#include "RCC_Config.h"
 /************************************************************************/
 
-/*Registers and Bits*/
+/*Segments, Registers and Bits*/
 #define RCC_SEGMENT             (*((volatile u32*)0x40023800))
+
 #define RCC_CR                  (*((volatile u32*)0x40023800))
 #define RCC_PLLCFGR             (*((volatile u32*)0x40023804))
 #define RCC_CFGR                (*((volatile u32*)0x40023808))
@@ -126,15 +127,15 @@
 
 /*Checking if configuration options are done correctly*/
 #if RCC_PLL_M < 2 || RCC_PLL_M > 63
-    #error 'RCC_PLL_M' must in the range 2 ≤ M ≤ 63
+    #error 'RCC_PLL_M' must in the range 2 <= M <= 63
 #endif
 
 #if RCC_PLL_N < 192 || RCC_PLL_N > 432
-    #error 'RCC_PLL_N' must in the range 192 ≤ N ≤ 432
+    #error 'RCC_PLL_N' must in the range 192 <= N <= 432
 #endif
 
 #if RCC_PLL_Q < 2 || RCC_PLL_Q > 15
-    #error 'RCC_PLL_Q' must in the range 2 ≤ Q ≤ 15
+    #error 'RCC_PLL_Q' must in the range 2 <= Q <= 15
 #endif
 
 #if (RCC_PLL_P != 2) && (RCC_PLL_P != 4) && (RCC_PLL_P != 6) && (RCC_PLL_P != 8)
@@ -146,15 +147,15 @@
 #endif
 
 #if RCC_AHB_PRESCALAR < PRE_SYSCLK_1 || RCC_AHB_PRESCALAR > PRE_SYSCLK_512
-    #error 'RCC_AHB_PRESCALAR' must in the range 'PRE_SYSCLK_1' ≤ 'RCC_AHB_PRESCALAR' ≤ 'PRE_SYSCLK_512'
+    #error 'RCC_AHB_PRESCALAR' must in the range 'PRE_SYSCLK_1' <= 'RCC_AHB_PRESCALAR' <= 'PRE_SYSCLK_512'
 #endif
 
 #if RCC_APB1_PRESCALAR < PRE_AHB_1 || RCC_APB1_PRESCALAR > PRE_AHB_16
-    #error 'RCC_APB1_PRESCALAR' must in the range 'PRE_AHB_1' ≤ 'RCC_APB1_PRESCALAR' ≤ 'PRE_AHB_16'
+    #error 'RCC_APB1_PRESCALAR' must in the range 'PRE_AHB_1' <= 'RCC_APB1_PRESCALAR' <= 'PRE_AHB_16'
 #endif
 
 #if RCC_APB2_PRESCALAR < PRE_AHB_1 || RCC_APB2_PRESCALAR > PRE_AHB_16
-    #error 'RCC_APB2_PRESCALAR' must in the range 'PRE_AHB_1' ≤ 'RCC_APB2_PRESCALAR' ≤ 'PRE_AHB_16'
+    #error 'RCC_APB2_PRESCALAR' must in the range 'PRE_AHB_1' <= 'RCC_APB2_PRESCALAR' <= 'PRE_AHB_16'
 #endif
 /************************************************************************/
 

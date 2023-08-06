@@ -15,7 +15,6 @@ void RCC_voidInitSysClk(void)
 
     #if RCC_SYSCLK_SRC == RCC_HSI
         SET_BIT(RCC_CR, RCC_CR_HSION);      /*Turn on HSI*/
-        MAKE_BIT(RCC_CR, RCC_CR_HSEBYP, RCC_HSE_BYPASSED);  /*Determine whether the HSE oscillator bypassed with an external clock*/
         while (!GET_BIT(RCC_CR, RCC_CR_HSIRDY))
         {
             /*Wait for HSI to turn on*/
@@ -26,6 +25,7 @@ void RCC_voidInitSysClk(void)
 
     #elif RCC_SYSCLK_SRC == RCC_HSE
         SET_BIT(RCC_CR, RCC_CR_HSEON);      /*Turn on HSE*/
+        MAKE_BIT(RCC_CR, RCC_CR_HSEBYP, RCC_HSE_BYPASSED);  /*Determine whether the HSE oscillator bypassed with an external clock*/
         while (!GET_BIT(RCC_CR, RCC_CR_HSERDY))
         {
             /*Wait for HSE to turn on*/
@@ -49,6 +49,7 @@ void RCC_voidInitSysClk(void)
 
         #elif RCC_PLL_SRC == RCC_HSE
             SET_BIT(RCC_CR, RCC_CR_HSEON);      /*Turn on HSE*/
+            MAKE_BIT(RCC_CR, RCC_CR_HSEBYP, RCC_HSE_BYPASSED);  /*Determine whether the HSE oscillator bypassed with an external clock*/
             while (!GET_BIT(RCC_CR, RCC_CR_HSERDY))
             {
                 /*Wait for HSE to turn on*/
