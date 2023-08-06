@@ -11,7 +11,7 @@
 #include "RCC_Interface.h"
 #include "GPIO_Interface.h"
 
-#include "SSED_Config.h"
+#include "SSEG_Config.h"
 #include "SSEG_Interface.h"
 
 /*Macros*/
