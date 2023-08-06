@@ -1,9 +1,10 @@
-/************************************************/
-/* Title       : SSEG Interface Header File      */
-/* Author      : Ashraf Ehab                    */
-/* Release     : 1.0                            */
-/* Last Update : Sep 04, 2022                   */
-/************************************************/
+/************************************************************************/
+/* SWC  	    : Seven Segment Driver                                  */
+/* Author	    : Ashraf Ehab                                           */
+/* Version	    : V1.0                                                  */
+/* Date 	    : 28 Jul 2023                                           */
+/* Description  : SWC for Seven Segment Display		                    */
+/************************************************************************/
 
 #ifndef SSEG_INTERFACE_H_
 #define SSEG_INTERFACE_H_
@@ -45,38 +46,35 @@
 
 /*Seven Segment Configuration Structure*/
 typedef struct{
-	u8 Loc_u8SEGPort;	/*The port the Seven Segment is connected to       *//*options: SSEG_PortA, B,C*/
-	u8 Loc_u8CommType;	/*Type of Seven Segment                            *//*options: SSEG_Comm_CATHODE, SSEG_Comm_ANODE*/
-	u8 Loc_u8CommPort;	/*The port the Seven Segment Common is connected to*//*options: SSEG_PortA, B,C*/
-	u8 Loc_u8CommPin;	/*The pin the Seven Segment Common is connected to *//*options: SSEG_Pin0, 1,2,..,15,Comm_Not_Connected*/
+	u8 Loc_u8SEGPort;	/*The port the Seven Segment is connected to       ----- options: SSEG_PortA,..,SSEG_PortC*/
+	u8 Loc_u8CommType;	/*Type of Seven Segment                            ----- options: SSEG_Comm_CATHODE, SSEG_Comm_ANODE*/
+	u8 Loc_u8CommPort;	/*The port the Seven Segment Common is connected to----- options: SSEG_PortA,..,SSEG_PortC,Comm_Not_Connected*/
+	u8 Loc_u8CommPin;	/*The pin the Seven Segment Common is connected to ----- options: SSEG_Pin0,..,SSEG_Pin15*/
 }SSEG_Config;
 
 
 /*Function Declerations*/
-/*Function: SSEG_u8InitSSEG: Initialize the Seven Segment Display
- * Input1 : copy_SSEGConfig_Current: Configuration Structure of the Seven Segment to control
- * Return : Loc_u8ErrorStatus: returns an error for the parent function if it encounters any issues
+/* 
+ * Function	: SSEG_esInitSSEG			: Initialize the Seven Segment Display
+ * Input1 	: copy_SSEGConfig_Input   : Configuration Structure of the Seven Segment to control
+ * Return 	: 					        : Error Status of function
  */
-ErrorStatus SSEG_esInitSSEG(SSEG_Config copy_SSEGConfig_Current);
-/*---------------------------------------------------------------------------------------------------------------------------------------------*/
-/*Function: SSEG_u8SetNumber: Displays a number on a Seven Segment Display
- * Input1 : copy_SSEGConfig_Current: Configuration Structure of the Seven Segment to control
- * Input2 : copy_u8Number: The number to be displayed on the Seven Segment
- * Input3 : copy_u8DOT_stat: Weather or not to print the dot
- * Return : Loc_u8ErrorStatus: returns an error for the parent function if it encounters any issues
+ErrorStatus SSEG_esInitSSEG(SSEG_Config copy_SSEGConfig_Input);
+
+/* 
+ * Function	: SSEG_esSetNumber			: Displays a number on a Seven Segment Display
+ * Input1 	: copy_SSEGConfig_Input  	: Configuration Structure of the Seven Segment to control
+ * Input2 	: copy_u8Number			   	: Number to display on Seven Segment
+ * Input3 	: copy_u8DOT_stat		   	: Whether or not to print the dot
+ * Return 	: 					        : Error Status of function
  */
-ErrorStatus SSEG_esSetNumber(SSEG_Config copy_SSEGConfig_Current, u8 copy_u8Number, u8 copy_u8DOT_stat);
-/*---------------------------------------------------------------------------------------------------------------------------------------------*/
-/*Function: SSEG_u8ClrNumber: Clears the numbers displayed on the Seven Segment
- * Input1 : copy_SSEGConfig_Current: Configuration Structure of the Seven Segment to control
- * Return : Loc_u8ErrorStatus: returns an error for the parent function if it encounters any issues
+ErrorStatus SSEG_esSetNumber(SSEG_Config copy_SSEGConfig_Input, u8 copy_u8Number, u8 copy_u8DOT_stat);
+
+/* 
+ * Function	: SSEG_esClrNumber			: Clears all LEDs on the Seven Segment
+ * Input1 	: copy_SSEGConfig_Input  	: Configuration Structure of the Seven Segment to control
+ * Return 	: 					        : Error Status of function
  */
-ErrorStatus SSEG_esClrNumber(SSEG_Config copy_SSEGConfig_Current);
-/*---------------------------------------------------------------------------------------------------------------------------------------------*/
-/*Function: SSEG_u8DispDot: Only displays the dot on a Seven Segment Display
- * Input1 : copy_SSEGConfig_Current: Configuration Structure of the Seven Segment to control
- * Return : Loc_u8ErrorStatus: returns an error for the parent function if it encounters any issues
- */
-//u8 SSEG_u8DispDot(SSEG_Config copy_SSEGConfig_Current);
+ErrorStatus SSEG_esClrNumber(SSEG_Config copy_SSEGConfig_Input);
 
 #endif /*SSEG_INTERFACE_H_*/

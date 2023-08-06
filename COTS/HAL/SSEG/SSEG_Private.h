@@ -8,8 +8,8 @@
 #ifndef SSEG_PRIVATE_H_
 #define SSEG_PRIVATE_H_
 
-#include "../../MCAL/RCC/RCC_Interface.h"
-#include "../../MCAL/GPIO/GPIO_Interface.h"
+#include "RCC_Interface.h"
+#include "GPIO_Interface.h"
 
 #include "SSED_Config.h"
 #include "SSEG_Interface.h"
@@ -46,6 +46,12 @@ static u8 Loc_u8Num[10] = {ZERO , ONE , TWO , THREE , FOUR , FIVE , SIX , SEVEN 
 static u8 Loc_u8NumwDOT[10] = {ZEROwDOT , ONEwDOT , TWOwDOT , THREEwDOT , FOURwDOT , FIVEwDOT , SIXwDOT , SEVENwDOT , EIGHTwDOT , NINEwDOT };
 static u8 Loc_u8Prei[3]={PREI_GPIOA,PREI_GPIOB,PREI_GPIOC};
 
-ErrorStatus SSEG_WriteNum(u8 Copy_u8Port, u8 Copy_u8Number);
+/* 
+ * Function	: SSEG_esWriteNum	: Turns on/off The appropriate LEDs in the SSEG based on the required number
+ * Input1 	: Copy_u8Port		: Port where the Seven Segment is connected 
+ * Input2 	: Copy_u8Number		: The number to display on the Seven Segment 
+ * Return 	: 				    : Error Status of function
+ */
+ErrorStatus SSEG_esWriteNum(u8 Copy_u8Port, u8 Copy_u8Number);
 
 #endif /*SSEG_PRIVATE_H_*/
