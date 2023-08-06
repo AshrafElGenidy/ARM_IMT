@@ -8,9 +8,9 @@
 #ifndef RCC_INTERFACE_H_
 #define RCC_INTERFACE_H_
 
-#include "../../Lib/STD_TYPES.h"
-#include "../../Lib/BIT_MATH.h"
-#include "../../Lib/MACROS.h"
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "MACROS.h"
 
 /*Peripheral IDs*/
 #define PREI_USBFS          (0u)
