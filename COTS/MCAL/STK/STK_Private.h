@@ -5,10 +5,11 @@
 /* Description  : SWC for Reset and Clock Control						*/
 /************************************************************************/
 
-
 #ifndef STK_PRIVATE_H
 #define STK_PRIVATE_H
 
+#include "STK_Config.h"
+#include "STK_Interface.h"
 
 /*Private Macros*/
 	/*STK_CLK_SRC Options*/
@@ -32,7 +33,6 @@
 #define STK_CTRL_CLKSOURCE	(2u)
 #define STK_CTRL_COUNTFLAG	(16u)
 /*__________________________________________________________________________________________________________________________________________*/
-
 
 /*Private Global Variables Definitions*/
 static void (* Globptr_vdCallbackFunction)(void) = NULL;

@@ -5,22 +5,8 @@
 /* Description  : SWC for System Timer									*/
 /************************************************************************/
 
-
-#warning Add Prescaller adjustments
-/*Include Needed Files*/
-	/*Include Needed Library Files*/
-#include "../../LIB/STD_TYPES.h"
-#include "../../LIB/BIT_MATH.h"
-#include "../../LIB/MACROS.h"
-
-	/*Include Needed STK Files*/
-#include "STK_Interface.h"
 #include "STK_Private.h"
-#include "STK_Config.h"
-/*__________________________________________________________________________________________________________________________________________*/
 
-
-/*Public Functions Definitions*/
 ErrorStatus STK_errInit(void)
 {
 	/*1- Stop Timer*/
@@ -166,7 +152,6 @@ ErrorStatus STK_errStop(void)
 
 	return NO_ERROR;
 }
-/*__________________________________________________________________________________________________________________________________________*/
 
 
 /*Interrupt Service Routines Defenitions*/

@@ -5,9 +5,12 @@
 /* Description  : SWC for Reset and Clock Control						*/
 /************************************************************************/
 
-
 #ifndef STK_INTERFACE_H
 #define STK_INTERFACE_H
+
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+#include "MACROS.h"
 
 
 /*Public Macros*/
