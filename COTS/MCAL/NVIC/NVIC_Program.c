@@ -13,7 +13,7 @@ void NVIC_vdInit()
 	SCB_AIRCR = VECTKEY | (PRIORITY_TYPE << PRIGROUP);
 }
 
-ErrorStatus NVIC_esEnablePerInt(PER_t copy_enPerID)
+ErrorStatus NVIC_esEnablePerInt(IRQn_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
@@ -23,7 +23,7 @@ ErrorStatus NVIC_esEnablePerInt(PER_t copy_enPerID)
 	return NO_ERROR;
 }
 
-ErrorStatus NVIC_esDisablePerInt(PER_t copy_enPerID)
+ErrorStatus NVIC_esDisablePerInt(IRQn_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
@@ -33,7 +33,7 @@ ErrorStatus NVIC_esDisablePerInt(PER_t copy_enPerID)
 	return NO_ERROR;
 }
 
-ErrorStatus NVIC_esSetPendingFlag(PER_t copy_enPerID)
+ErrorStatus NVIC_esSetPendingFlag(IRQn_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
@@ -43,7 +43,7 @@ ErrorStatus NVIC_esSetPendingFlag(PER_t copy_enPerID)
 	return NO_ERROR;
 }
 
-ErrorStatus NVIC_esClearPendingFlag(PER_t copy_enPerID)
+ErrorStatus NVIC_esClearPendingFlag(IRQn_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
@@ -53,7 +53,7 @@ ErrorStatus NVIC_esClearPendingFlag(PER_t copy_enPerID)
 	return NO_ERROR;
 }
 
-ErrorStatus NVIC_esSetPerPriority(PER_t copy_enPerID, u8 copy_u8Group, u8 copy_u8SubGroup)
+ErrorStatus NVIC_esSetPerPriority(IRQn_t copy_enPerID, u8 copy_u8Group, u8 copy_u8SubGroup)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{

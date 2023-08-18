@@ -71,14 +71,14 @@ typedef enum
 	FPU = 81,
 	SPI4 = 84,
 	NOT_A_PERIPHERAL = 240
-}PER_t;
+}IRQn_t;
 
 void NVIC_vdInit();
-ErrorStatus NVIC_esEnablePerInt(PER_t copy_enPerID);
-ErrorStatus NVIC_esDisablePerInt(PER_t copy_enPerID);
-ErrorStatus NVIC_esSetPendingFlag(PER_t copy_enPerID);
-ErrorStatus NVIC_esClearPendingFlag(PER_t copy_enPerID);
-ErrorStatus NVIC_esSetPerPriority(PER_t copy_enPerID, u8 copy_u8Group, u8 copy_u8SubGroup);
+ErrorStatus NVIC_esEnablePerInt(IRQn_t copy_enPerID);
+ErrorStatus NVIC_esDisablePerInt(IRQn_t copy_enPerID);
+ErrorStatus NVIC_esSetPendingFlag(IRQn_t copy_enPerID);
+ErrorStatus NVIC_esClearPendingFlag(IRQn_t copy_enPerID);
+ErrorStatus NVIC_esSetPerPriority(IRQn_t copy_enPerID, u8 copy_u8Group, u8 copy_u8SubGroup);
 
 
 #endif  /*NVIC_INTERFACE_H_*/
