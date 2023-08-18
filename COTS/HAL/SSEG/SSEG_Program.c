@@ -53,7 +53,7 @@ ErrorStatus SSEG_esInitSSEG(SSEG_Config copy_SSEGConfig_Input)
 	Loc_esReturn = RCC_voidEnablePeripheralClk(Loc_u8Prei[copy_SSEGConfig_Input.Loc_u8SEGPort]);
 	RETURN_IF_ERROR(Loc_esReturn);
 	/*Set the pins the Seven Segment is connected to as output*/
-	for (u8 i=0; 1<7; i++)
+	for (u8 i=0; i<8; i++)
 	{
 		Loc_esReturn = GPIO_esSetPinMode (copy_SSEGConfig_Input.Loc_u8SEGPort,i,GPIO_PIN_OUTPUT);
 		RETURN_IF_ERROR(Loc_esReturn);
