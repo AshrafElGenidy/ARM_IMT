@@ -73,11 +73,11 @@ typedef enum
 	NOT_A_PERIPHERAL = 240
 }PER_t;
 
-void NVIC_esInit();
-ErrorStatus NVIC_vdEnablePerInt(PER_t copy_enPerID);
-ErrorStatus NVIC_vdDisablePerInt(PER_t copy_enPerID);
-ErrorStatus NVIC_vdSetPendingFlag(PER_t copy_enPerID);
-ErrorStatus NVIC_vdClearPendingFlag(PER_t copy_enPerID);
+void NVIC_vdInit();
+ErrorStatus NVIC_esEnablePerInt(PER_t copy_enPerID);
+ErrorStatus NVIC_esDisablePerInt(PER_t copy_enPerID);
+ErrorStatus NVIC_esSetPendingFlag(PER_t copy_enPerID);
+ErrorStatus NVIC_esClearPendingFlag(PER_t copy_enPerID);
 ErrorStatus NVIC_esSetPerPriority(PER_t copy_enPerID, u8 copy_u8Group, u8 copy_u8SubGroup);
 
 

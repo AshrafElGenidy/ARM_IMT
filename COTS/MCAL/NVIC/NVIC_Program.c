@@ -8,12 +8,12 @@
 #include "NVIC_Private.h"
 
 
-void NVIC_esInit()
+void NVIC_vdInit()
 {
 	SCB_AIRCR = VECTKEY | (PRIORITY_TYPE << PRIGROUP);
 }
 
-ErrorStatus NVIC_vdEnablePerInt(PER_t copy_enPerID)
+ErrorStatus NVIC_esEnablePerInt(PER_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
@@ -23,7 +23,7 @@ ErrorStatus NVIC_vdEnablePerInt(PER_t copy_enPerID)
 	return NO_ERROR;
 }
 
-ErrorStatus NVIC_vdDisablePerInt(PER_t copy_enPerID)
+ErrorStatus NVIC_esDisablePerInt(PER_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
@@ -33,7 +33,7 @@ ErrorStatus NVIC_vdDisablePerInt(PER_t copy_enPerID)
 	return NO_ERROR;
 }
 
-ErrorStatus NVIC_vdSetPendingFlag(PER_t copy_enPerID)
+ErrorStatus NVIC_esSetPendingFlag(PER_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
@@ -43,7 +43,7 @@ ErrorStatus NVIC_vdSetPendingFlag(PER_t copy_enPerID)
 	return NO_ERROR;
 }
 
-ErrorStatus NVIC_vdClearPendingFlag(PER_t copy_enPerID)
+ErrorStatus NVIC_esClearPendingFlag(PER_t copy_enPerID)
 {
 	if(NOT_A_PERIPHERAL >= copy_enPerID)
 	{
