@@ -11,7 +11,7 @@
 void RCC_voidInitSysClk(void)
 {
     /*Setting Prescalars for the busses*/
-    RCC_CFGR = RCC_CFGR_EMPTY | (RCC_AHB_PRESCALAR << RCC_CFGR_HPRE) | (RCC_APB1_PRESCALAR << RCC_CFGR_PPRE1) || (RCC_APB2_PRESCALAR << RCC_CFGR_PPRE2);
+    RCC_CFGR = RCC_CFGR_EMPTY | (RCC_AHB_PRESCALAR << RCC_CFGR_HPRE) | (RCC_APB1_PRESCALAR << RCC_CFGR_PPRE1) | (RCC_APB2_PRESCALAR << RCC_CFGR_PPRE2);
 
     #if RCC_SYSCLK_SRC == RCC_HSI
         SET_BIT(RCC_CR, RCC_CR_HSION);      /*Turn on HSI*/
@@ -54,7 +54,7 @@ void RCC_voidInitSysClk(void)
             {
                 /*Wait for HSE to turn on*/
             }
-            /*Select HSI as PLL source*/
+            /*Select HSE as PLL source*/
             SET_BIT(RCC_PLLCFGR, RCC_PLLCFGR_PLLSRC);
 
         #else

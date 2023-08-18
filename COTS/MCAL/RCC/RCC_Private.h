@@ -122,7 +122,7 @@
 /*Useful Macros*/
 #define RCC_PLLCFGR_EMPTY   (0x20000000)
 #define RCC_CFGR_EMPTY      (0x00000000)
-#define RCC_PLL_P_REG_VAL   ((RCC_PLL_P -2) >> 1)
+#define RCC_PLL_P_REG_VAL   ((RCC_PLL_P - 2) >> 1)
 /************************************************************************/
 
 /*Checking if configuration options are done correctly*/

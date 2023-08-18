@@ -8,7 +8,7 @@
 #ifndef RCC_CONFIG_H_
 #define RCC_CONFIG_H_
 
-#define RCC_SYSCLK_SRC     RCC_HSI              /*System CLK Source --- options: RCC_HSI, RCC_HSE, RCC_PLL*/
+#define RCC_SYSCLK_SRC     RCC_PLL              /*System CLK Source --- options: RCC_HSI, RCC_HSE, RCC_PLL*/
 
 /*HSE Configurations*/
 #define RCC_HSE_BYPASSED    TRUE                /*HSE oscillator bypassed with an external clock --- options: TRUE, FALSE*/
