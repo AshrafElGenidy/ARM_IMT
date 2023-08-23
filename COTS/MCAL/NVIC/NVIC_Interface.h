@@ -80,5 +80,4 @@ ErrorStatus NVIC_esSetPendingFlag(IRQn_t copy_enPerID);
 ErrorStatus NVIC_esClearPendingFlag(IRQn_t copy_enPerID);
 ErrorStatus NVIC_esSetPerPriority(IRQn_t copy_enPerID, u8 copy_u8Group, u8 copy_u8SubGroup);
 
-
 #endif  /*NVIC_INTERFACE_H_*/

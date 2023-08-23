@@ -11,6 +11,8 @@
 #include "NVIC_Interface.h"
 #include "NVIC_Config.h"
 
+#include "SCB_Interface.h"
+
 /*Registers and Bits*/
 
 typedef struct 
@@ -25,17 +27,5 @@ typedef struct
 }NVIC_t;
 
 #define NVIC       	((volatile NVIC_t*)0xE000EF00)
-
-#define PRIGROUP 	(8u)
-
-#define SCB_AIRCR	(*(volatile u32*)0xE000ED0C)
-#define VECTKEY		(0x5FA0000)
-
-
-#define GP16_SBP01		(3u)
-#define GP08_SBP02		(4u)
-#define GP04_SBP04		(5u)
-#define GP02_SBP08		(6u)
-#define GP01_SBP16		(7u)
 
 #endif  /*NVIC_PRIVATE_H_*/

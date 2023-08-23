@@ -8,7 +8,6 @@
 #ifndef NVIC_CONFIG_H_
 #define NVIC_CONFIG_H_
 
-/*Number of Groups and subgroups in interrupt priorities: Options:- GP16_SBP01, GP08_SBP02, GP04_SBP04, GP02_SBP08, GP01_SBP16*/
-#define PRIORITY_TYPE		GP16_SBP01	
+#include "../MCU_Config.h"
 
 #endif  /*NVIC_CONFIG_H_*/

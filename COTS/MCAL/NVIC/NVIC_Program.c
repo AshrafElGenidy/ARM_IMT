@@ -10,52 +10,54 @@
 
 void NVIC_vdInit()
 {
-	SCB_AIRCR = VECTKEY | (PRIORITY_TYPE << PRIGROUP);
+	SCB_Init();
 }
 
 ErrorStatus NVIC_esEnablePerInt(IRQn_t copy_enPerID)
 {
-	if(NOT_A_PERIPHERAL >= copy_enPerID)
+	if(NOT_A_PERIPHERAL <= copy_enPerID)
 	{
 		return INVALID_PARAMETERS;
 	}
-	NVIC->ISER[copy_enPerID/32] = 1 << (copy_enPerID%32);
+	NVIC->ISER[copy_enPerID >> 5] = 1 << (copy_enPerID%32);
 	return NO_ERROR;
 }
 
 ErrorStatus NVIC_esDisablePerInt(IRQn_t copy_enPerID)
 {
-	if(NOT_A_PERIPHERAL >= copy_enPerID)
+	if(NOT_A_PERIPHERAL <= copy_enPerID)
 	{
 		return INVALID_PARAMETERS;
 	}
-	NVIC->ICER[copy_enPerID/32] = 1 << (copy_enPerID%32);
+	NVIC->ICER[copy_enPerID >> 5] = 1 << (copy_enPerID%32);
 	return NO_ERROR;
 }
 
 ErrorStatus NVIC_esSetPendingFlag(IRQn_t copy_enPerID)
 {
-	if(NOT_A_PERIPHERAL >= copy_enPerID)
+	if(NOT_A_PERIPHERAL <= copy_enPerID)
 	{
 		return INVALID_PARAMETERS;
 	}
-	NVIC->ISPR[copy_enPerID/32] = 1 << (copy_enPerID%32);
+	NVIC->ISPR[copy_enPerID >> 5] = 1 << (copy_enPerID%32);
 	return NO_ERROR;
 }
 
 ErrorStatus NVIC_esClearPendingFlag(IRQn_t copy_enPerID)
 {
-	if(NOT_A_PERIPHERAL >= copy_enPerID)
+	if(NOT_A_PERIPHERAL <= copy_enPerID)
 	{
 		return INVALID_PARAMETERS;
 	}
-	NVIC->ICPR[copy_enPerID/32] = 1 << (copy_enPerID%32);
+	NVIC->ICPR[copy_enPerID >> 5] = 1 << (copy_enPerID%32);
 	return NO_ERROR;
 }
 
 ErrorStatus NVIC_esSetPerPriority(IRQn_t copy_enPerID, u8 copy_u8Group, u8 copy_u8SubGroup)
 {
-	if(NOT_A_PERIPHERAL >= copy_enPerID)
+	u8 Loc_u8Priority = 0;
+	u8 Loc_u8BitRange = 0;
+	if(NOT_A_PERIPHERAL <= copy_enPerID)
 	{
 		return INVALID_PARAMETERS;
 	}
@@ -84,10 +86,12 @@ ErrorStatus NVIC_esSetPerPriority(IRQn_t copy_enPerID, u8 copy_u8Group, u8 copy_
 	{
 		return INVALID_PARAMETERS;
 	}
+	#else 
+		#error 'PRIORITY_TYPE' can only be 'GP16_SBP01','GP08_SBP02','GP04_SBP04','GP02_SBP08' or 'GP01_SBP16'
 	#endif
-	u8 Loc_u8Priority = copy_u8SubGroup | (copy_u8Group << (PRIORITY_TYPE - 3));
-	u8 Loc_u8BitRange = (((copy_enPerID%4)*8)+4);
-	NVIC->IPR[copy_enPerID/4] &= ~(0b1111<<(Loc_u8BitRange));
-	NVIC->IPR[copy_enPerID/4] |= Loc_u8Priority << Loc_u8BitRange;
+	Loc_u8Priority = copy_u8SubGroup | (copy_u8Group << PRIORITY_TYPE);
+	Loc_u8BitRange = (((copy_enPerID % 4) << 3) + 4);
+	CLR_NIBBLE(NVIC->IPR[copy_enPerID >> 2], Loc_u8BitRange);
+	NVIC->IPR[copy_enPerID >> 2] |= Loc_u8Priority << Loc_u8BitRange;
 	return NO_ERROR;
 }
