@@ -48,6 +48,8 @@ typedef enum
 	NOT_A_PERIPHERAL
 }PERI_t;
 
+/*__________________________________________________________________________________________________________________________________________*/
+/*Function Definitions*/
 
 /* 
  * Function	: RCC_voidInitSysClk			: Initiates the clock for the micro-controller according to configurations in RCC_Config

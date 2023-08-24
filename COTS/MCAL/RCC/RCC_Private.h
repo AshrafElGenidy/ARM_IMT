@@ -99,7 +99,6 @@
 #define RCC_HSI				(1u)
 #define RCC_HSE				(2u)
 #define RCC_PLL				(3u)
-
 /*Prescalar options*/
 /*AHB*/
 #define PRE_SYSCLK_1		(7u)
