@@ -12,7 +12,7 @@
  * Input1 	: copy_u8Port				: Port with pin n to set the mode of			: GPIO_PORTA -> GPIO_PORTC
  * Input2 	: copy_u8Pin				: Pin n to set the mode of						: GPIO_PIN0  -> GPIO_PIN15
  * Input3 	: copy_u8Mode				: mode chosen for the pin						: GPIO_INPUT -> GPIO_ANALOG
- * Return 	: ErrorStatus				: Error Status of function
+ * Return 	: Error Status of function
  */
 ErrorStatus GPIO_esSetPinMode(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Mode)
 {
@@ -46,7 +46,7 @@ ErrorStatus GPIO_esSetPinMode(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Mode)
  * Input1 	: copy_u8Port				: Port with pin n to set the output type of		: GPIO_PORTA -> GPIO_PORTC
  * Input2 	: copy_u8Pin				: Pin n to set the output type of				: GPIO_PIN0  -> GPIO_PIN15
  * Input3 	: copy_u8OutputType			: output type chosen for the pin				: GPIO_PUSHPULL -> GPIO_OPENDRAIN
- * Return 	: ErrorStatus				: Error Status of function
+ * Return 	: Error Status of function
  */
 ErrorStatus GPIO_esSetPinOutputType(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8OutputType)
 {
@@ -69,7 +69,7 @@ ErrorStatus GPIO_esSetPinOutputType(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Out
  * Input1 	: copy_u8Port				: Port with pin n to set the output speed of	: GPIO_PORTA -> GPIO_PORTC
  * Input2 	: copy_u8Pin				: Pin n to set the speed of						: GPIO_PIN0  -> GPIO_PIN15
  * Input3 	: copy_u8Speed				: speed chosen for the pin						: GPIO_LOWSPEED -> GPIO_VERYHIGHSPEED
- * Return 	: ErrorStatus				: Error Status of function
+ * Return 	: Error Status of function
  */
 ErrorStatus GPIO_esSetPinSpeed(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Speed)
 {
@@ -103,7 +103,7 @@ ErrorStatus GPIO_esSetPinSpeed(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Speed)
  * Input1 	: copy_u8Port				: Port with pin n to set the resistors of		: GPIO_PORTA -> GPIO_PORTC
  * Input2 	: copy_u8Pin				: Pin n to set the resistor mode of				: GPIO_PIN0  -> GPIO_PIN15
  * Input3 	: copy_u8PullUpDown			: resistor mode chosen for the pin				: GPIO_FLOATING -> GPIO_PULLDOWN
- * Return 	: ErrorStatus				: Error Status of function
+ * Return 	: Error Status of function
  */
 ErrorStatus GPIO_esSetPinPullUpDown(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8PullUpDown)
 {
@@ -137,7 +137,7 @@ ErrorStatus GPIO_esSetPinPullUpDown(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Pul
  * Input1 	: copy_u8Port				: Port with pin n to set the value of			: GPIO_PORTA -> GPIO_PORTC
  * Input2 	: copy_u8Pin				: Pin n to set the value of						: GPIO_PIN0  -> GPIO_PIN15
  * Input3 	: copy_u8Value				: value chosen for the pin						: GPIO_LOW -> GPIO_HIGH
- * Return 	: ErrorStatus				: Error Status of function
+ * Return 	: Error Status of function
  */
 ErrorStatus GPIO_esSetPinValue(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Value)
 {
@@ -183,7 +183,7 @@ ErrorStatus GPIO_esSetPinValue(u8 copy_u8Port, u8 copy_u8Pin, u8 copy_u8Value)
  * Input1 	: copy_u8Port				: Port with pin n to read the value of			: GPIO_PORTA -> GPIO_PORTC
  * Input2 	: copy_u8Pin				: Pin n to read the value of						: GPIO_PIN0  -> GPIO_PIN15
  * Output1 	: Outptr_u8Value			: value present on the pin						: GPIO_LOW -> GPIO_HIGH
- * Return 	: ErrorStatus				: Error Status of function
+ * Return 	: Error Status of function
  */
 ErrorStatus GPIO_esGetPinValue(u8 copy_u8Port, u8 copy_u8Pin, u8* Outptr_u8Value)
 {
