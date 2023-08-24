@@ -49,7 +49,7 @@ typedef enum
 }PERI_t;
 
 /*__________________________________________________________________________________________________________________________________________*/
-/*Function Definitions*/
+/*Function Declerations*/
 
 /* 
  * Function	: RCC_voidInitSysClk			: Initiates the clock for the micro-controller according to configurations in RCC_Config
