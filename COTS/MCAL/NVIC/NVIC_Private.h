@@ -1,9 +1,9 @@
 /************************************************************************/
-/* SWC  	    : NVIC Driver                                           */
-/* Author	    : Ashraf Ehab                                           */
-/* Version	    : V1.0                                                  */
-/* Date 	    : 12 Aug 2023                                           */
-/* Description  : SWC for Nested Vectored Interrupt Controller          */
+/* SWC  	    : NVIC Driver											*/
+/* Author	    : Ashraf Ehab											*/
+/* Version	    : V1.0													*/
+/* Date 	    : 24 Aug 2023											*/
+/* Description  : SWC for Nested Vectored Interrupt Controller			*/
 /************************************************************************/
 #ifndef NVIC_PRIVATE_H_
 #define NVIC_PRIVATE_H_
@@ -13,8 +13,9 @@
 
 #include "SCB_Interface.h"
 
-/*Registers and Bits*/
-
+/*Segments*/
+#define NVIC       	((volatile NVIC_t*)0xE000EF00)
+/*Registers*/
 typedef struct 
 {
     volatile u32 ISER[32];
@@ -25,7 +26,5 @@ typedef struct
     volatile u32 IPR[32];
     volatile u32 STIR[32];
 }NVIC_t;
-
-#define NVIC       	((volatile NVIC_t*)0xE000EF00)
 
 #endif  /*NVIC_PRIVATE_H_*/
