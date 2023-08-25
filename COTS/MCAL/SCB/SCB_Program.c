@@ -13,5 +13,5 @@
 void SCB_Init(void)
 {
 	/*Set Group Priority Type according to MCU_Config*/
-	SCB_AIRCR = VECTKEY | ((PRIORITY_TYPE + 3) << PRIGROUP);
+	SCB_AIRCR = VECTKEY | ((INTERRUPT_PRIORITY_TYPE + 3) << PRIGROUP);
 }

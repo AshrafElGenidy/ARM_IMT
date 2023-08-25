@@ -9,7 +9,7 @@
 #ifndef STK_CONFIG_H
 #define STK_CONFIG_H
 
-#include "../MCU_Config.h"
+#include "../MCU/MCU_Config.h"
 
 /*CLK Src Configuration*/
 	/*CLK Src*/

@@ -8,7 +8,7 @@
 #ifndef RCC_CONFIG_H_
 #define RCC_CONFIG_H_
 
-#include "../MCU_Config.h"
+#include "../MCU/MCU_Config.h"
 
 #define RCC_SYSCLK_SRC		RCC_HSI				/*System CLK Source --- options: RCC_HSI, RCC_HSE, RCC_PLL*/
 

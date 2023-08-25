@@ -90,35 +90,35 @@ ErrorStatus NVIC_esSetPerPriority(IRQ_t copy_enPeripheralID, u8 copy_u8Group, u8
 	{
 		return INVALID_PARAMETERS;
 	}
-	#if GP16_SBP01 == PRIORITY_TYPE
+	#if GP16_SBP01 == INTERRUPT_PRIORITY_TYPE
 	if((16 <= copy_u8Group) || (0 < copy_u8SubGroup))
 	{
 		return INVALID_PARAMETERS;
 	}
-	#elif GP08_SBP02 == PRIORITY_TYPE
+	#elif GP08_SBP02 == INTERRUPT_PRIORITY_TYPE
 	if((8 <= copy_u8Group) || (2 <= copy_u8SubGroup))
 	{
 		return INVALID_PARAMETERS;
 	}
-	#elif GP04_SBP04 == PRIORITY_TYPE
+	#elif GP04_SBP04 == INTERRUPT_PRIORITY_TYPE
 	if((4 <= copy_u8Group) || (4 <= copy_u8SubGroup))
 	{
 		return INVALID_PARAMETERS;
 	}
-	#elif GP02_SBP08 == PRIORITY_TYPE
+	#elif GP02_SBP08 == INTERRUPT_PRIORITY_TYPE
 	if((2 <= copy_u8Group) || (8 <= copy_u8SubGroup))
 	{
 		return INVALID_PARAMETERS;
 	}
-	#elif GP01_SBP16 == PRIORITY_TYPE
+	#elif GP01_SBP16 == INTERRUPT_PRIORITY_TYPE
 	if((0 < copy_u8Group) || (16 <= copy_u8SubGroup))
 	{
 		return INVALID_PARAMETERS;
 	}
 	#else 
-		#error 'PRIORITY_TYPE' can only be 'GP16_SBP01','GP08_SBP02','GP04_SBP04','GP02_SBP08' or 'GP01_SBP16'
+		#error 'INTERRUPT_PRIORITY_TYPE' can only be 'GP16_SBP01','GP08_SBP02','GP04_SBP04','GP02_SBP08' or 'GP01_SBP16'
 	#endif
-	Loc_u8Priority = copy_u8SubGroup | (copy_u8Group << PRIORITY_TYPE);
+	Loc_u8Priority = copy_u8SubGroup | (copy_u8Group << INTERRUPT_PRIORITY_TYPE);
 	Loc_u8BitRange = (((copy_enPeripheralID % 4) << 3) + 4);
 	CLR_NIBBLE(NVIC->IPR[copy_enPeripheralID >> 2], Loc_u8BitRange);
 	NVIC->IPR[copy_enPeripheralID >> 2] |= Loc_u8Priority << Loc_u8BitRange;

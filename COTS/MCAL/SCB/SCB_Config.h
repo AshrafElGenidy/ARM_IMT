@@ -8,6 +8,6 @@
 #ifndef SCB_CONFIG_H_
 #define SCB_CONFIG_H_
 
-#include "../MCU_Config.h"
+#include "../MCU/MCU_Config.h"
 
 #endif  /*SCB_CONFIG_H_*/

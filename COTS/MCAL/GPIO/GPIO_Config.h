@@ -8,6 +8,6 @@
 #ifndef GPIO_CONFIG_H_
 #define GPIO_CONFIG_H_
 
-#include "../MCU_Config.h"
+#include "../MCU/MCU_Config.h"
 
 #endif  /*GPIO_CONFIG_H_*/
