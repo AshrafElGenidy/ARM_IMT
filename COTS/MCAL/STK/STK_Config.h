@@ -1,8 +1,9 @@
 /************************************************************************/
-/* SWC  	    : STK Driver											*/
-/* Author	    : Ali Azmy												*/
-/* Version	    : V0.0													*/
-/* Description  : SWC for Reset and Clock Control						*/
+/* SWC  	    : GPIO Driver											*/
+/* Author	    : Ashraf Ehab											*/
+/* Version	    : V1.0													*/
+/* Date 	    : 24 Aug 2023											*/
+/* Description  : SWC for SysTick Timer									*/
 /************************************************************************/
 
 #ifndef STK_CONFIG_H
