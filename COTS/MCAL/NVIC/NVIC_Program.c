@@ -8,14 +8,6 @@
 #include "NVIC_Private.h"
 
 /* 
- * Function	: NVIC_vdInit				: Initializes the NVIC module
- */
-void NVIC_vdInit()
-{
-	SCB_Init();
-}
-
-/* 
  * Function	: NVIC_esEnablePerInt		: Enables the Interrupt response of NVIC for a certain peripheral
  * Input1 	: copy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
  * Return 	: Error Status of function
