@@ -1,9 +1,9 @@
 /************************************************************************/
-/* SWC  	    : MCU Config											*/
-/* Author	    : Ashraf Ehab											*/
-/* Version	    : V1.0													*/
-/* Date 	    : 12 Aug 2023											*/
-/* Description  : SWC for Configurations affecting multiple modules		*/
+/* SWC			: MCU Config											*/
+/* Author		: Ashraf Ehab											*/
+/* Version		: V1.0													*/
+/* Date			: 12 Aug 2023											*/
+/* Description	: SWC for Configurations affecting multiple modules		*/
 /************************************************************************/
 
 /*Number of Groups and subgroups in interrupt priorities: Options:- GP16_SGP01, GP08_SGP02, GP04_SGP04, GP02_SGP08, GP01_SGP16*/

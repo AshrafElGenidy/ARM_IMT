@@ -1,9 +1,9 @@
 /************************************************************************/
-/* SWC  	    : RCC Driver											*/
-/* Author	    : Ashraf Ehab											*/
-/* Version	    : V1.0													*/
-/* Date 	    : 24 Aug 2023											*/
-/* Description  : SWC for Reset and Control Clock						*/
+/* SWC			: RCC Driver											*/
+/* Author		: Ashraf Ehab											*/
+/* Version		: V1.0													*/
+/* Date			: 24 Aug 2023											*/
+/* Description	: SWC for Reset and Control Clock						*/
 /************************************************************************/
 #ifndef RCC_PRIVATE_H_
 #define RCC_PRIVATE_H_

@@ -1,9 +1,9 @@
 /************************************************************************/
-/* SWC  	    : GPIO Driver											*/
-/* Author	    : Ashraf Ehab											*/
-/* Version	    : V1.0													*/
-/* Date 	    : 24 Aug 2023											*/
-/* Description  : SWC for SysTick Timer									*/
+/* SWC			: GPIO Driver											*/
+/* Author		: Ashraf Ehab											*/
+/* Version		: V1.0													*/
+/* Date			: 24 Aug 2023											*/
+/* Description	: SWC for SysTick Timer									*/
 /************************************************************************/
 
 #include "STK_Private.h"

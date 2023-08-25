@@ -1,9 +1,9 @@
 /************************************************************************/
-/* SWC  	    : NVIC Driver											*/
-/* Author	    : Ashraf Ehab											*/
-/* Version	    : V1.0													*/
-/* Date 	    : 24 Aug 2023											*/
-/* Description  : SWC for Nested Vectored Interrupt Controller			*/
+/* SWC			: NVIC Driver											*/
+/* Author		: Ashraf Ehab											*/
+/* Version		: V1.0													*/
+/* Date			: 24 Aug 2023											*/
+/* Description	: SWC for Nested Vectored Interrupt Controller			*/
 /************************************************************************/
 #ifndef NVIC_INTERFACE_H_
 #define NVIC_INTERFACE_H_
