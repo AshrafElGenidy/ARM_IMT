@@ -31,17 +31,12 @@ typedef enum
 {
 	NO_ERROR,
 	INVALID_PARAMETERS,
-	INVALID_FUNCTION,
 	NULL_POINTER_PASSED,
-	POSITION_OUT_OF_RANGE,
+	INVALID_FUNCTION,
 	INVALID_CONFIGS,
 	FEATURE_NOT_ENABLED,
 	INVALID_MODE,
 	INVALID_PRESCALER,
-	I2C_StartNotSent,
-	I2C_RepeatedStartNotSent,
-	I2C_No_ACK_Recieved,
-	I2C_Arbitration_Lost
 }ErrorStatus;
 /*__________________________________________________________________________________________________________________________________________*/
 
