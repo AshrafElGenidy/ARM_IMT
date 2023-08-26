@@ -11,6 +11,8 @@
 #include "GPIO_Interface.h"
 #include "GPIO_Config.h"
 
+#include "../RCC/RCC_Interface.h"
+
 /*Segments*/
 #define GPIOA       ((volatile u32*)0x40020000)
 #define GPIOB       ((volatile u32*)0x40020400)

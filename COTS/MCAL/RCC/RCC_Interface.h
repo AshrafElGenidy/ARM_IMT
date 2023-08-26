@@ -15,38 +15,38 @@
 /*Peripheral IDs*/
 typedef enum
 {
-	USBFS,
-	DMA1,
-	DMA2,
-	CRC,
-	GPIOA,
-	GPIOB,
-	GPIOC,
-	TIM1,
-	TIM2,
-	TIM3,
-	TIM4,
-	TIM5,
-	TIM9,
-	TIM10,
-	TIM11,
-	SYSCFG,
-	SPI1,
-	SPI2,
-	SPI3,
-	SPI4,
-	SDIO,
-	ADC1,
-	USART1,
-	USART2,
-	USART6,
-	PWR,
-	I2C1,
-	I2C2,
-	I2C3,
-	WWDG,
-	NOT_A_PERIPHERAL
-}PERI_t;
+	c_USBFS,
+	c_DMA1,
+	c_DMA2,
+	c_CRC,
+	c_GPIOA,
+	c_GPIOB,
+	c_GPIOC,
+	c_TIM1,
+	c_TIM2,
+	c_TIM3,
+	c_TIM4,
+	c_TIM5,
+	c_TIM9,
+	c_TIM10,
+	c_TIM11,
+	c_SYSCFG,
+	c_SPI1,
+	c_SPI2,
+	c_SPI3,
+	c_SPI4,
+	c_SDIO,
+	c_ADC1,
+	c_USART1,
+	c_USART2,
+	c_USART6,
+	c_PWR,
+	c_I2C1,
+	c_I2C2,
+	c_I2C3,
+	c_WWDG,
+	NOT_A_PERIPHERAL_CLOCK
+}PER_c_t;
 
 /*__________________________________________________________________________________________________________________________________________*/
 
@@ -60,13 +60,13 @@ void RCC_voidInitSysClk(void);
  * Input1 	: copy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
  * Return 	: Error Status of function
  */
-ErrorStatus RCC_voidEnablePeripheralClk(PERI_t copy_enPeripheralID);
+ErrorStatus RCC_voidEnablePeripheralClk(PER_c_t copy_enPeripheralID);
 
 /* 
  * Function	: RCC_voidDisablePeripheralClk	: Disables the clock for a certain peripheral
  * Input1 	: copy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
  * Return 	: Error Status of function
  */
-ErrorStatus RCC_voidDisablePeripheralClk(PERI_t copy_enPeripheralID);
+ErrorStatus RCC_voidDisablePeripheralClk(PER_c_t copy_enPeripheralID);
 
 #endif /*RCC_INTERFACE_H_*/

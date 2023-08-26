@@ -8,6 +8,22 @@
 #include "GPIO_Private.h"
 
 /* 
+ * Function	: GPIO_esPortInit			: Initializes the system for a port x
+ * Input1 	: copy_u8Port				: Port to initialize							: GPIO_PORTA -> GPIO_PORTC
+ * Return 	: Error Status of function
+ */
+ErrorStatus GPIO_esPortInit(u8 copy_u8Port)
+{
+	switch (copy_u8Port)
+	{
+	case GPIO_PORTA:	return RCC_voidEnablePeripheralClk(c_GPIOA);
+	case GPIO_PORTB:	return RCC_voidEnablePeripheralClk(c_GPIOB);
+	case GPIO_PORTC:	return RCC_voidEnablePeripheralClk(c_GPIOC);
+	default:			return INVALID_PARAMETERS;
+	}
+}
+
+/* 
  * Function	: GPIO_esSetPinMode			: Sets the mode for a pin n on port x
  * Input1 	: copy_u8Port				: Port with pin n to set the mode of			: GPIO_PORTA -> GPIO_PORTC
  * Input2 	: copy_u8Pin				: Pin n to set the mode of						: GPIO_PIN0  -> GPIO_PIN15
