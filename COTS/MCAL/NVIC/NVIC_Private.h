@@ -18,13 +18,13 @@
 /*Registers*/
 typedef struct 
 {
-    volatile u32 ISER[32];
-    volatile u32 ICER[32];
-    volatile u32 ISPR[32];
-    volatile u32 ICPR[32];
-    volatile u32 IABR[64];
-    volatile u32 IPR[32];
-    volatile u32 STIR[32];
+	volatile u32 ISER[32];
+	volatile u32 ICER[32];
+	volatile u32 ISPR[32];
+	volatile u32 ICPR[32];
+	volatile u32 IABR[64];
+	volatile u32 IPR[32];
+	volatile u32 STIR[32];
 }NVIC_t;
 
 #endif  /*NVIC_PRIVATE_H_*/

@@ -11,6 +11,6 @@
 #include "MCU_Private.h"
 
 /*Number of Groups and subgroups in interrupt priorities: Options:- GP16_SGP01, GP08_SGP02, GP04_SGP04, GP02_SGP08, GP01_SGP16*/
-#define INTERRUPT_PRIORITY_TYPE		GP16_SGP01	
+#define INTERRUPT_PRIORITY_TYPE			GP16_SGP01	
 
 #endif  /*MCU_CONFIG_H_*/

@@ -14,19 +14,19 @@
 #include "../RCC/RCC_Interface.h"
 
 /*Segments*/
-#define GPIOA       ((volatile u32*)0x40020000)
-#define GPIOB       ((volatile u32*)0x40020400)
-#define GPIOC       ((volatile u32*)0x40020800)
+#define GPIOA		((volatile u32*)0x40020000)
+#define GPIOB		((volatile u32*)0x40020400)
+#define GPIOC		((volatile u32*)0x40020800)
 /*Registers*/
-#define MODER               (0u)
-#define OTYPER              (1u)
-#define OSPEEDR             (2u)
-#define PUPDR               (3u)
-#define IDR                 (4u)
-#define ODR                 (5u)
-#define BSRR                (6u)
-#define LCKR                (7u)
-#define AFRL                (8u)
-#define AFRH                (9u)
+#define MODER				(0u)
+#define OTYPER 				(1u)
+#define OSPEEDR				(2u)
+#define PUPDR				(3u)
+#define IDR					(4u)
+#define ODR					(5u)
+#define BSRR				(6u)
+#define LCKR				(7u)
+#define AFRL				(8u)
+#define AFRH				(9u)
 
 #endif  /*GPIO_PRIVATE_H_*/

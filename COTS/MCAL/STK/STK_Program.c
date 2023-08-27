@@ -71,10 +71,10 @@ ErrorStatus STK_esSetWait(u32 Copy_u32TickCount)
 /* 
  * Function	: STK_esSetIntervalSingle	: Triggers a callback function after a certain amount of timer ticks
  * Input1 	: Copy_u32TickCount			: Number of ticks to trigger after						: 0 -> (2^24)- 1
- * Input2 	: Inptr_vdCallbackFunction	: Pointer to the function to get called by the user		: 0 -> (2^24)- 1
+ * Input2 	: inptr_vdCallbackFunction	: Pointer to the function to get called by the user		: 0 -> (2^24)- 1
  * Return 	: Error Status of function
  */
-ErrorStatus STK_esSetIntervalSingle(u32 Copy_u32TickCount, void (* Inptr_vdCallbackFunction)(void))
+ErrorStatus STK_esSetIntervalSingle(u32 Copy_u32TickCount, void (* inptr_vdCallbackFunction)(void))
 {
 	/*I/p validation*/
 	if (0xFFFFFF < Copy_u32TickCount)
@@ -89,7 +89,7 @@ ErrorStatus STK_esSetIntervalSingle(u32 Copy_u32TickCount, void (* Inptr_vdCallb
 	STK_VAL = 0;
 
 	/*3- Set Callback Function*/
-	Globptr_vdCallbackFunction = Inptr_vdCallbackFunction;
+	Globptr_vdCallbackFunction = inptr_vdCallbackFunction;
 
 	/*4- Set Interval Flag*/
 	Glob_u8IntervalFlag = INTERVAL_FLAG_SINGLE_MODE;
@@ -107,10 +107,10 @@ ErrorStatus STK_esSetIntervalSingle(u32 Copy_u32TickCount, void (* Inptr_vdCallb
 /* 
  * Function	: STK_esSetIntervalPeriodic	: Triggers a callback function every certain amount of timer ticks
  * Input1 	: Copy_u32TickCount			: Number of ticks to trigger after periodically			: 0 -> (2^24)- 1
- * Input2 	: Inptr_vdCallbackFunction	: Pointer to the function to get called by the user		: 0 -> (2^24)- 1
+ * Input2 	: inptr_vdCallbackFunction	: Pointer to the function to get called by the user		: 0 -> (2^24)- 1
  * Return 	: Error Status of function
  */
-ErrorStatus STK_esSetIntervalPeriodic(u32 Copy_u32TickCount, void (* Inptr_vdCallbackFunction)(void))
+ErrorStatus STK_esSetIntervalPeriodic(u32 Copy_u32TickCount, void (* inptr_vdCallbackFunction)(void))
 {
 	/*I/p validation*/
 	if (0xFFFFFF < Copy_u32TickCount)
@@ -125,7 +125,7 @@ ErrorStatus STK_esSetIntervalPeriodic(u32 Copy_u32TickCount, void (* Inptr_vdCal
 	STK_VAL = 0;
 
 	/*3- Set Callback Function*/
-	Globptr_vdCallbackFunction = Inptr_vdCallbackFunction;
+	Globptr_vdCallbackFunction = inptr_vdCallbackFunction;
 
 	/*4- Set Interval Flag*/
 	Glob_u8IntervalFlag = INTERVAL_FLAG_PERIODIC_MODE;
@@ -198,7 +198,7 @@ ErrorStatus STK_esStop(void)
 /*__________________________________________________________________________________________________________________________________________*/
 
 /* 
- * Function	: SysTick_Handler			: Handler for Systick Interrupts
+ * Function		: SysTick_Handler			: Handler for Systick Interrupts
  * Description	: This function calls the callback function, stops the timer if in single mode, and clears the interrupt flag.
  */
 void SysTick_Handler(void)

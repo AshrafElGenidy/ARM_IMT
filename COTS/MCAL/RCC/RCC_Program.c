@@ -80,12 +80,12 @@ void RCC_voidInitSysClk(void)
 
 /* 
  * Function	: RCC_voidEnablePeripheralClk	: Enables the clock for a certain peripheral
- * Input1 	: copy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
+ * Input1 	: cpy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
  * Return 	: Error Status of function
  */
-ErrorStatus RCC_voidEnablePeripheralClk(PER_c_t copy_enPeripheralID)
+ErrorStatus RCC_voidEnablePeripheralClk(PER_c_t cpy_enPeripheralID)
 {
-    switch (copy_enPeripheralID)
+    switch (cpy_enPeripheralID)
     {
     case c_USBFS:			SET_BIT(RCC[AHB2ENR], OTGFSEN);			break;
     case c_DMA1:			SET_BIT(RCC[AHB1ENR], DMA1EN);			break;
@@ -124,12 +124,12 @@ ErrorStatus RCC_voidEnablePeripheralClk(PER_c_t copy_enPeripheralID)
 
 /* 
  * Function	: RCC_voidDisablePeripheralClk	: Disables the clock for a certain peripheral
- * Input1 	: copy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
+ * Input1 	: cpy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
  * Return 	: Error Status of function
  */
-ErrorStatus RCC_voidDisablePeripheralClk(PER_c_t copy_enPeripheralID)
+ErrorStatus RCC_voidDisablePeripheralClk(PER_c_t cpy_enPeripheralID)
 {
-    switch (copy_enPeripheralID)
+    switch (cpy_enPeripheralID)
     {
     case c_USBFS:			CLR_BIT(RCC[AHB2ENR], OTGFSEN);			break;
     case c_DMA1:			CLR_BIT(RCC[AHB1ENR], DMA1EN);			break;

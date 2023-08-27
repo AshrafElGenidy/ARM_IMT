@@ -17,7 +17,7 @@
 
 /************************************ PLL Configurations -- Calculating PLL frequency ************************************************
  * IMPORTANT :- User must check these values in their own system and ensure all the ranges below are met or the module will not work properly
- * PLL Input Frequency = Frecuency of PLL input source	(chosen in RCC_PLL_SRC) 
+ * PLL Input Frequency = Frecuency of PLL input source		(chosen in RCC_PLL_SRC) 
  * VCO input frequency = PLL input clock frequency / PLLM	(VCO input frequency ranges from 1 to 2 MHz. It is recommended to select a frequency of 2 MHz to limit PLL jitter)
  * VCO output frequency = VCO input frequency × PLLN		(VCO output frequency ranges from 192 to 432 MHz)
  * PLL output frequency = VCO frequency / PLLP				(PLL output clock frequency does not exceed 84 MHz)

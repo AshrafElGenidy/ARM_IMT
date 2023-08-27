@@ -78,39 +78,39 @@ typedef enum
 
 /* 
  * Function	: NVIC_esEnablePerInt		: Enables the Interrupt response of NVIC for a certain peripheral
- * Input1 	: copy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
+ * Input1 	: cpy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
  * Return 	: Error Status of function
  */
-ErrorStatus NVIC_esEnablePerInt(IRQ_t copy_enPeripheralID);
+ErrorStatus NVIC_esEnablePerInt(IRQ_t cpy_enPeripheralID);
 
 /* 
  * Function	: NVIC_esDisablePerInt		: Disables the Interrupt response of NVIC for a certain peripheral
- * Input1 	: copy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
+ * Input1 	: cpy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
  * Return 	: Error Status of function
  */
-ErrorStatus NVIC_esDisablePerInt(IRQ_t copy_enPeripheralID);
+ErrorStatus NVIC_esDisablePerInt(IRQ_t cpy_enPeripheralID);
 
 /* 
  * Function	: NVIC_esSetPendingFlag		: Sets the NVIC Pending flag of a certain peripheral
- * Input1 	: copy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
+ * Input1 	: cpy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
  * Return 	: Error Status of function
  */
-ErrorStatus NVIC_esSetPendingFlag(IRQ_t copy_enPeripheralID);
+ErrorStatus NVIC_esSetPendingFlag(IRQ_t cpy_enPeripheralID);
 
 /* 
  * Function	: NVIC_esClearPendingFlag	: Clears the NVIC Pending flag of a certain peripheral
- * Input1 	: copy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
+ * Input1 	: cpy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
  * Return 	: Error Status of function
  */
-ErrorStatus NVIC_esClearPendingFlag(IRQ_t copy_enPeripheralID);
+ErrorStatus NVIC_esClearPendingFlag(IRQ_t cpy_enPeripheralID);
 
 /* 
  * Function	: NVIC_esSetPerPriority		: Sets the priority group and subgroup for a certain peripheral IRQ
- * Input1 	: copy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
- * Input2 	: copy_u8Group				: The desired group number for that IRQ		: 0 -> Max number of groups chosen in MCU_Config
- * Input3 	: copy_u8SubGroup			: The desired sub-group number for that IRQ	: 0 -> Max number of sub-groups chosen in MCU_Config
+ * Input1 	: cpy_enPeripheralID		: The ID of that specific peripheral IRQ	: WWDG -> SPI4
+ * Input2 	: cpy_u8Group				: The desired group number for that IRQ		: 0 -> Max number of groups chosen in MCU_Config
+ * Input3 	: cpy_u8SubGroup			: The desired sub-group number for that IRQ	: 0 -> Max number of sub-groups chosen in MCU_Config
  * Return 	: Error Status of function
  */
-ErrorStatus NVIC_esSetPerPriority(IRQ_t copy_enPeripheralID, u8 copy_u8Group, u8 copy_u8SubGroup);
+ErrorStatus NVIC_esSetPerPriority(IRQ_t cpy_enPeripheralID, u8 cpy_u8Group, u8 cpy_u8SubGroup);
 
 #endif  /*NVIC_INTERFACE_H_*/

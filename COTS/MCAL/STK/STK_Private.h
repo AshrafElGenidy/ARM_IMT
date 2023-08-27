@@ -27,8 +27,8 @@
 
 /*Configuration options*/
 /*STK_CLK_SRC Options*/
-#define SRC_AHB			(1u)
-#define SRC_AHB_DIV_8	(2u)
+#define SRC_AHB								(1u)
+#define SRC_AHB_DIV_8						(2u)
 /*Glob_u8IntervalFlag Options*/
 #define INTERVAL_FLAG_SINGLE_MODE			(0u)
 #define INTERVAL_FLAG_PERIODIC_MODE			(1u)

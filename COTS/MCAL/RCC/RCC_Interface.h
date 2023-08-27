@@ -57,16 +57,16 @@ void RCC_voidInitSysClk(void);
 
 /* 
  * Function	: RCC_voidEnablePeripheralClk	: Enables the clock for a certain peripheral
- * Input1 	: copy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
+ * Input1 	: cpy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
  * Return 	: Error Status of function
  */
-ErrorStatus RCC_voidEnablePeripheralClk(PER_c_t copy_enPeripheralID);
+ErrorStatus RCC_voidEnablePeripheralClk(PER_c_t cpy_enPeripheralID);
 
 /* 
  * Function	: RCC_voidDisablePeripheralClk	: Disables the clock for a certain peripheral
- * Input1 	: copy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
+ * Input1 	: cpy_enPeripheralID			: The ID of that specific peripheral		: PREI_USBFS -> PREI_WWDG
  * Return 	: Error Status of function
  */
-ErrorStatus RCC_voidDisablePeripheralClk(PER_c_t copy_enPeripheralID);
+ErrorStatus RCC_voidDisablePeripheralClk(PER_c_t cpy_enPeripheralID);
 
 #endif /*RCC_INTERFACE_H_*/

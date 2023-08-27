@@ -44,13 +44,13 @@
 #define HSEBYP				(18u)
 #define PLLON				(24u)
 #define PLLRDY				(25u)
-/*RCC_PLLCFGR*/     
+/*RCC_PLLCFGR*/
 #define PLLM0				(0u)
 #define PLLN0				(6u)
 #define PLLP0				(16u)
 #define PLLSRC				(22u)
 #define PLLQ0				(24u)
-/*RCC_CFGR*/        
+/*RCC_CFGR*/
 #define SW0					(0u)
 #define SW1					(1u)
 #define HPRE				(4u)
